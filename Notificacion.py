@@ -10,6 +10,7 @@ load_dotenv()
 sender_email = "mensajeriaap2025@gmail.com"
 receiver_email = "aagudelo.investigacion@andrespublicidadtg.com"
 password = os.getenv("EMAIL_PASSWORD")
+session_url = os.getenv("SESSION_URL")
 
 def send_email_notificacion():
     message = MIMEMultipart()
@@ -31,7 +32,7 @@ def check_session():
         "Content-Type": "application/json"
     }
     try:
-        response= requests.get("https://gestor-de-mesajeria-via-whatsapp-g5hc.onrender.com/api/whatsapp/obtenerClientes", headers=headers)
+        response= requests.get(session_url, headers=headers)
         print(response)
         if response.status_code == 200:
             data = response.json()
