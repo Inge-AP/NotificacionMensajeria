@@ -7,8 +7,8 @@ import os
 
 load_dotenv()
 
-sender_email = "mensajeriaap2025@gmail.com"
-receiver_email = "aagudelo.investigacion@andrespublicidadtg.com"
+sender_email = os.getenv("SENDER_EMAIL")
+receiver_email = os.getenv("RECEIVER_EMAIL")
 password = os.getenv("EMAIL_PASSWORD")
 session_url = os.getenv("SESSION_URL")
 
